@@ -1,0 +1,228 @@
+.test{
+    height: 50px;
+    width: 80px;
+    background-color: black;
+}
+
+
+input[type="date"] {
+    width: 150px; 
+    height: 20px; 
+    padding: 10px; 
+    border: 2px solid #8836d9;
+    border-radius: 8px;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    margin: 0 10px;
+}
+
+input[type="date"]:hover {
+    border-color: #7a29b4;
+}
+
+input[type="date"]:focus {
+    border-color: #91bb49;
+    outline: none;
+    box-shadow: 0 0 5px rgba(136, 54, 217, 0.5);
+}
+
+#filterBtn {
+    width: 150px; 
+    height: 40px;
+
+    border: none; 
+    border-radius: 8px; 
+    background-color: #8836d9; 
+    color: white;
+    font-family: Poppins, sans-serif; 
+    font-size: 19px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+#filterBtn:hover {
+    background-color: #7a29b4; 
+}
+
+#filterBtn:focus {
+    outline: none; 
+    box-shadow: 0 0 5px rgba(136, 54, 217, 0.5); 
+}
+
+
+.container-tradeChart {
+    height: 60vh;
+    width: 80vw;
+    background-color: #fff;
+    border-radius: 14px;
+}
+
+.container-tradeChart2 {
+    height: 60vh;
+    width: 80vw;
+    background-color: #fff;
+    border-radius: 14px;
+}
+
+.metrics-container{
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.metrics1{
+    width: 300px;
+    height: 100px;
+    background-color: #8836d9;
+    border-radius: 14px;
+}
+
+.metrics2{
+    width: 300px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 14px;
+}
+
+.metrics3{
+    width: 300px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 14px;
+}
+
+.metrics4{
+    width: 300px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 14px;
+}
+
+.metrics5{
+    width: 200px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 14px;
+}
+
+.metrics1-text{
+    color: #fff;
+    margin-left: -180px;
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+.metrics2-text{
+    color: #000;
+    margin-left: -204px;
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+.metrics3-text{
+    color: #000;
+    margin-left: -120px;
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+.metrics4-text{
+    color: #000;
+    margin-left: -195px;
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+.metrics5-text{
+    color: #000;
+    margin-left: -205px;
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+.metrics1-value{
+    color: #fff;
+    margin-left: -220px;
+    margin-top: -19px;
+    font-size: 30px;
+}
+
+.metrics2-value{
+    color: #8836d9;
+    margin-left: -195px;
+    margin-top: -19px;
+    font-size: 30px;
+}
+.metrics3-value{
+    color: #8836d9;
+    margin-left: -190px;
+    margin-top: -19px;
+    font-size: 30px;
+}
+.metrics4-value{
+    color: #8836d9;
+    margin-left: -120px;
+    margin-top: -19px;
+    font-size: 30px;
+}
+
+.metrics5-value{
+    color: #8836d9;
+    margin-left: -110px;
+    margin-top: 25px;
+    font-size: 30px;
+}
+
+.middle{
+    display: flex;
+    gap: 12px;
+}
+.forecast{
+    background-color: #fff;
+    width: 250px;
+    height: 60vh;
+    border-radius: 14px;
+}
+
+.forecast-text{
+    font-size: 21px;
+    color: #7a29b4;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+p {
+    white-space: pre-wrap; /* Preserve whitespace */
+}
+
+.day{
+    text-align: left;
+    padding-left: 12px;
+    margin: 20px;
+    font-size: 18px;
+}
+
+#tradeChart {
+    width: 60%;  
+    height: 500px; 
+}
+
+#tradeChart2 {
+    width: 60%;  
+    height: 500px;
+}
+
+
+
+body {
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    background-color: #e9e8e8;
+}
+
+h1 {
+    color: black;
+}

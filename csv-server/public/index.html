@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Chart</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- D3.js CDN -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+    <h1>Trade Bot Evaluation Station</h1>
+    <div>
+        <label for="startDate">From: </label>
+        <input type="date" id="startDate">
+        <label for="endDate">To: </label>
+        <input type="date" id="endDate">
+        <button id="filterBtn">Filter</button>
+    </div>
+    <div class="metrics-container">
+        <div class="metrics1">
+            <p class="metrics1-text">Profit Factor</p>
+            <p class="metrics1-value"></p>
+        </div>
+        <div class="metrics2">
+            <p class="metrics2-text">Win Rate</p>
+            <p class="metrics2-value"></p>
+        </div>
+        <div class="metrics3">
+            <p class="metrics3-text">Average Trade Profit</p>
+            <p class="metrics3-value"></p>
+        </div>
+        <div class="metrics4">
+            <p class="metrics4-text">Max Drawn</p>
+            <p class="metrics4-value"></p>
+        </div>
+        <div class="metrics5"></div>
+            <p class="metrics5-text">Expectancy</p>
+            <p class="metrics5-value"></p>
+        </div>
+    </div>
+
+    <!-- <div class="container-tradeChart2"></div>
+        <canvas id="tradeChart2"></canvas>
+    </div> -->
+
+    <div class="middle">
+        <div class="container-tradeChart">
+            <canvas id="tradeChart"></canvas>
+        </div>
+        <div class="forecast">
+            <p class="forecast-text">Next 5 days forecast</p>
+            <p class="day">Day 1:      ₹216.01</p>
+            <p class="day">Day 2:      ₹216.03</p>
+            <p class="day">Day 3:      ₹215.90</p>
+            <p class="day">Day 4:      ₹215.10</p>
+            <p class="day">Day 5:      ₹216.01</p>
+            <p class="day">Day 6:      ₹216.08</p>
+            <p class="day">Day 7:      ₹216.22</p>
+        </div>
+    </div>
+    
+    
+
+    
+    
+    <!-- Link to external JS file -->
+    <script src="scripts.js"></script>
+</body>
+</html>
