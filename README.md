@@ -8,20 +8,33 @@ offering insights into profitability, risk management, and decision-making effic
 metrics and interactive tools, this application aims to help traders, analysts, and researchers refine their 
 trading strategies and maximize returns.
 
-## Get your Trade Bot Evaluated on filtered dates
+### Get your Trade Bot Evaluated on filtered dates
 Easily assess your trade bot's performance using key financial metrics like Profit Factor, Win Rate, Average 
 Trade Profit, Max Drawdown, and Expectancy. These metrics offer a clear understanding of your bot's efficiency, 
 profitability, and risk exposure, helping you make data-driven adjustments to improve its performance.
 
-## Get a week's forecast of trade price
+### Get a week's forecast of trade price
 Use the built-in ARIMA model to forecast trade prices for the upcoming week. This feature provides valuable 
 insights into future market trends, enabling you to fine-tune your trading strategies based on predicted price 
 movements.
 
-## Get Gemini's opinion
+### Get Gemini's opinion
 Gain deeper insights with Gemini's analysis, which interprets your bot's performance, highlights areas for 
 improvement, and offers recommendations for optimizing your trading tactics. Let Gemini guide you toward 
 smarter, more profitable trading decisions.
+
+## How to run
+- Clone this repository. 
+- Add your dataset (bot behaviour) to the public folder.
+- Run `node index.js` on the terminal to start the server.
+- You will be able to see the evaluation station running on `http://localhost:3000/`
+
+
+
+
+  
+
+
 
 
 
