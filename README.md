@@ -35,14 +35,19 @@ csv-server/
 ├── package-lock.json  
 └── package.json  
 
-
-
-
 ## How to run
 - Clone this repository. 
 - Add your dataset (bot behaviour) to the public folder.
 - Run `node index.js` on the terminal to start the server.
 - You will be able to see the evaluation station running on `http://localhost:3000/`
+
+## User Interface
+
+![Screenshot 2024-09-30 222156](https://github.com/user-attachments/assets/6d6004f4-0539-4999-b012-f4083928efbb)
+![Screenshot 2024-09-30 222339](https://github.com/user-attachments/assets/3ecc03cd-fcb1-430a-b217-265a0d077d91)
+
+
+
 
 
 
