@@ -1,27 +1,10 @@
-// Load the CSV file using D3.js
-// const { GoogleGenerativeAI } = require("@google/generative-ai");
-
-// async function generateStory() {
-//     const genAI = new GoogleGenerativeAI('jbdfwiebfiw'); // Your API key here
-
-//     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-//     const prompt = "Write a story about a magic backpack.";
-
-//     const result = await model.generateContent(prompt);
-//     console.log(result.response.text());
-// }
-
-// generateStory();
-
-
-d3.csv('ListofTrades.csv').then(function(data) { // Adjust path here
+d3.csv('ListofTrades.csv').then(function(data) {
     const tradeNumbers = [];
     const profits = [];
     const cumProfits = [];
     const dates = [];
 
-    // Parse the CSV data
+
     data.forEach(row => {
         tradeNumbers.push(row['Trade #']);
         profits.push(parseFloat(row['Profit INR']));
@@ -29,13 +12,12 @@ d3.csv('ListofTrades.csv').then(function(data) { // Adjust path here
         dates.push(new Date(row['Date/Time'])); // Parse date
     });
 
-    let tradeChart; // Declare a variable for the chart
-    let tradeChart2; // Declare a variable for the chart
+    let tradeChart; 
+    let tradeChart2;
 
     function createChart(filteredData) {
         const ctx = document.getElementById('tradeChart').getContext('2d');
 
-        // If the chart already exists, destroy it before creating a new one
         if (tradeChart) {
             tradeChart.destroy();
         }
@@ -97,7 +79,6 @@ d3.csv('ListofTrades.csv').then(function(data) { // Adjust path here
     function createChart2(filteredData) {
         const ctx = document.getElementById('tradeChart2').getContext('2d');
     
-        // If the chart already exists, destroy it before creating a new one
         if (tradeChart2) {
             tradeChart2.destroy();
         }
@@ -105,17 +86,16 @@ d3.csv('ListofTrades.csv').then(function(data) { // Adjust path here
         const datesFiltered = filteredData.map(row => row['Date/Time']);
         const runUpPercentagesFiltered = filteredData.map(row => parseFloat(row['Run-up %']));
     
-        // Reverse the data for proper chronological plotting (if needed)
         datesFiltered.reverse();
         runUpPercentagesFiltered.reverse();
     
         tradeChart2 = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: datesFiltered,  // X-axis labels (dates)
+                labels: datesFiltered,  
                 datasets: [{
                     label: 'Run-up %',
-                    data: runUpPercentagesFiltered,  // Y-axis data
+                    data: runUpPercentagesFiltered,  
                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
                     borderColor: 'rgba(75, 192, 192, 1)',
                     borderWidth: 1,
@@ -144,72 +124,6 @@ d3.csv('ListofTrades.csv').then(function(data) { // Adjust path here
         });
     }
     
-    
-    // Call createChart2 with data passed from Python
-    
-    
-
-    // function createChart2(filteredData) {
-    //     const ctx = document.getElementById('tradeChart2').getContext('2d');
-
-    //     // If the chart already exists, destroy it before creating a new one
-    //     if (tradeChart2) {
-    //         tradeChart2.destroy();
-    //     }
-
-    //     const tradeNumbersFiltered = filteredData.map(row => row['Trade #']);
-    //     const profitsFiltered = filteredData.map(row => parseFloat(row['Profit INR']));
-    //     const cumProfitsFiltered = filteredData.map(row => parseFloat(row['Cum. Profit INR']));
-
-    //     tradeNumbersFiltered.reverse();
-    //     profitsFiltered.reverse();
-    //     cumProfitsFiltered.reverse();
-
-
-    //     tradeChart2 = new Chart(ctx, {
-    //         type: 'line',
-    //         data: {
-    //             labels: tradeNumbersFiltered,
-    //             datasets: [
-    //                 {
-    //                     label: 'Profit INR',
-    //                     data: profitsFiltered,
-    //                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
-    //                     borderColor: 'rgba(75, 192, 192, 1)',
-    //                     borderWidth: 1,
-    //                     fill: false,
-    //                 },
-    //                 {
-    //                     label: 'Cumulative Profit INR',
-    //                     data: cumProfitsFiltered,
-    //                     backgroundColor: 'rgba(153, 102, 255, 0.2)',
-    //                     borderColor: 'rgba(153, 102, 255, 1)',
-    //                     borderWidth: 1,
-    //                     fill: false,
-    //                 }
-    //             ]
-    //         },
-    //         options: {
-    //             responsive: true,
-    //             maintainAspectRatio: false,
-    //             scales: {
-    //                 x: {
-    //                     title: {
-    //                         display: true,
-    //                         text: 'Trade #'
-    //                     }
-    //                 },
-    //                 y: {
-    //                     beginAtZero: true,
-    //                     title: {
-    //                         display: true,
-    //                         text: 'Profit INR'
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     });
-    // }
 
     function calculateProfitFactor(filteredData) {
         let grossProfit = 0;
@@ -218,14 +132,14 @@ d3.csv('ListofTrades.csv').then(function(data) { // Adjust path here
         filteredData.forEach(row => {
             const profit = parseFloat(row['Profit INR']);
             if (profit > 0) {
-                grossProfit += profit; // Sum profits
+                grossProfit += profit; 
             } else if (profit < 0) {
-                grossLoss += profit; // Sum losses (this will be negative)
+                grossLoss += profit; 
             }
         });
     
-        grossLoss = Math.abs(grossLoss); // Make gross loss positive for the profit factor calculation
-        const profitFactor = grossLoss === 0 ? Infinity : grossProfit / grossLoss; // Avoid division by zero
+        grossLoss = Math.abs(grossLoss); 
+        const profitFactor = grossLoss === 0 ? Infinity : grossProfit / grossLoss;
     
         console.log(`Gross Profit: ${grossProfit}`);
         console.log(`Gross Loss: ${grossLoss}`);
@@ -311,9 +225,8 @@ d3.csv('ListofTrades.csv').then(function(data) { // Adjust path here
     }
     
 
-    // Initial chart creation with all data
+    
     createChart(data);
-    // createChart2(data);
     calculateProfitFactor(data);
     calculateWinRate(data);
     calculateAverageTradeProfit(data);
@@ -323,19 +236,16 @@ d3.csv('ListofTrades.csv').then(function(data) { // Adjust path here
     calculateExpectancy(data);
 
 
-    // Filter button functionality
     document.getElementById('filterBtn').addEventListener('click', function() {
         const startDate = new Date(document.getElementById('startDate').value);
         const endDate = new Date(document.getElementById('endDate').value);
 
-        // Filter the data based on date range
         const filteredData = data.filter(row => {
             const rowDate = new Date(row['Date/Time']);
             return rowDate >= startDate && rowDate <= endDate;
         });
 
         createChart(filteredData);
-        // createChart2(filteredData);
         calculateProfitFactor(filteredData);
         calculateWinRate(filteredData);
         calculateAverageTradeProfit(filteredData);
