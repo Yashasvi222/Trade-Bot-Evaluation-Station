@@ -23,6 +23,21 @@ Gain deeper insights with Gemini's analysis, which interprets your bot's perform
 improvement, and offers recommendations for optimizing your trading tactics. Let Gemini guide you toward 
 smarter, more profitable trading decisions.
 
+## Directory Structure
+csv-server/  
+├── node_modules/  
+├── public/  
+│&nbsp;&nbsp;&nbsp;&nbsp;├── ListofTrades.csv  
+│&nbsp;&nbsp;&nbsp;&nbsp;├── index.html  
+│&nbsp;&nbsp;&nbsp;&nbsp;├── scripts.js  
+│&nbsp;&nbsp;&nbsp;&nbsp;└── styles.js  
+├── index.js  
+├── package-lock.json  
+└── package.json  
+
+
+
+
 ## How to run
 - Clone this repository. 
 - Add your dataset (bot behaviour) to the public folder.
